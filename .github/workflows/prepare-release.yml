@@ -64,8 +64,10 @@ jobs:
         echo "new:"
         echo "v$newVersion"
         git add ./package.json ./package-lock.json ./src/api/* ./api-definition
+        echo "status after git add"
         git status
         git commit -m "Bump version from v$oldVersion to v$newVersion"
+        echo "git log:"
         git log --oneline
         git tag "v$newVersion"
         echo "tags:"
