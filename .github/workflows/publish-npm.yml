@@ -27,7 +27,7 @@ jobs:
 
     - name: "publish"
       run: |
-        cd ./dist
+        cd ./dist/ngx-c8y-openapi-library
         ls -all
         npm publish
       env:
