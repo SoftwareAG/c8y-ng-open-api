@@ -9,7 +9,6 @@
     "test": "ng test",
     "gen-api": "npx rimraf projects/ngx-c8y-openapi-library/src/api && npx ng-openapi-gen --input ./projects/c8y-oas.json --output ./projects/ngx-c8y-openapi-library/src/api"
   },
-  "private": true,
   "dependencies": {},
   "devDependencies": {
     "@angular/common": "^16.2.0",
