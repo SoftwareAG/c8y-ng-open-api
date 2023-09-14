@@ -22,13 +22,12 @@ jobs:
 
     - name: "npm install"
       run: |
-        cd ./c8y-ui-innovation-workspace
         npm ci
         npm ng build
 
     - name: "publish"
       run: |
-        cd ./c8y-ui-innovation-workspace/dist
+        cd ./dist
         npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
