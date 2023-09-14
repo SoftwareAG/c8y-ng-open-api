@@ -59,7 +59,7 @@ jobs:
         oldVersion=$(jq .version ./package.json | sed 's/\"//g')
         echo "old:"
         echo "v$oldVersion"
-        npm version patch
+        npm version patch --git-tag-version false
         newVersion=$(jq .version ./package.json | sed 's/\"//g')
         echo "new:"
         echo "v$newVersion"
