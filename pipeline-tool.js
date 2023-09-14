@@ -41,8 +41,8 @@ async function buildAction(url, options) {
     }
     fs.writeFileSync(jsonPath, JSON.stringify(jsonData, null, 2));
 
-    execSync('npx rimraf projects/ngx-c8y-openapi-library/src/api', {stdio: 'inherit'});
-    execSync(`npx ng-openapi-gen --input ${jsonPath} --output ./projects/ngx-c8y-openapi-library/src/api`, {stdio: 'inherit'});
+    execSync('npx rimraf src/api', {stdio: 'inherit'});
+    execSync(`npx ng-openapi-gen --input ${jsonPath} --output ./src/api`, {stdio: 'inherit'});
     execSync('npx ng build');
 
 
