@@ -1,0 +1,31 @@
+{
+  "name": "c8y-ui-innovation-workspace",
+  "version": "0.0.1",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "gen-api": "npx rimraf projects/ngx-c8y-openapi-library/src/api && npx ng-openapi-gen --input ./projects/c8y-oas.json --output ./projects/ngx-c8y-openapi-library/src/api"
+  },
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@angular/common": "^16.2.0",
+    "@angular/compiler": "^16.2.0",
+    "@angular/core": "^16.2.0",
+    "lodash": "^4.17.21",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.13.0",
+    "@angular-devkit/build-angular": "^16.2.1",
+    "@angular/cli": "~16.2.1",
+    "@angular/compiler-cli": "^16.2.0",
+    "axios": "^1.5.0",
+    "commander": "^11.0.0",
+    "ng-openapi-gen": "^0.50.2",
+    "ng-packagr": "^16.2.0",
+    "typescript": "~5.1.3"
+  }
+}
