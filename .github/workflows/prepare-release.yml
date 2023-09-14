@@ -63,7 +63,7 @@ jobs:
         newVersion=$(jq .version ./package.json | sed 's/\"//g')
         echo "new:"
         echo "v$newVersion"
-        git add package.json package-lock.json src/api/* api-definition
+        git add ./package.json ./package-lock.json ./src/api/* ./api-definition
         git status
         git commit -m "Bump version from v$oldVersion to v$newVersion"
         git log --oneline
