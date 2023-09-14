@@ -1,6 +1,6 @@
 {
   "name": "@c8y/ng-openapi-library",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
