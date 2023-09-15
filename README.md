@@ -1,24 +1,63 @@
-# NgxC8yOpenapiLibrary
+# @c8y/ng-openapi-lib
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+This library provides set of models and services granting access to automatically generated API that is based on Open Api 3.0 specification.
 
-## Code scaffolding
+## Generating API
 
-Run `ng generate component component-name --project ngx-c8y-openapi-library` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-c8y-openapi-library`.
-> Note: Don't forget to add `--project ngx-c8y-openapi-library` or else it will be added to the default project in your `angular.json` file. 
+By default, API is generated automatically by github actions workflow, each day, if there are any changes in Open Api specification file.
+It is possible to generate api files manually by running command `node pipeline-tool.js build-api`
+Api source can be changed by providing url as argument. To skip equality check, provide `-f --force` flag.
 
-## Build
 
-Run `ng build ngx-c8y-openapi-library` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage in project
 
-## Publishing
+run `npm i c8y-ng-openapi-library --save` to install latest version of API library.
 
-After building your library with `ng build ngx-c8y-openapi-library`, go to the dist folder `cd dist/ngx-c8y-openapi-library` and run `npm publish`.
+Then import `ApiModule` inside main application module:
 
-## Running unit tests
+```typescript
+import { CoreModule, BootstrapComponent } from '@c8y/ngx-components';
+import { NgModule } from '@angular/core';
+import { ApiModule } from 'ngx-c8y-openapi-library';
 
-Run `ng test ngx-c8y-openapi-library` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+  imports: [
+    CoreModule.forRoot(),
+    ApiModule.forRoot({ rootUrl: 'http://localhost:9000' }),
+  ],
+  declarations: [],
+  bootstrap: [BootstrapComponent],
 
-## Further help
+})
+export class AppModule {}
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Then inside Any service or component inject one of generated services:
+
+```typescript
+@Component({
+  selector: 'c8y-users-component',
+  templateUrl: './users.component.html',
+  standalone: true,
+  imports: [CoreModule]
+})
+@Injectable()
+export class UsersComponent implements OnInit {
+ public users$: Observable<UserCollection>;
+  
+  constructor(
+    public breadcrumbService: BreadcrumbService,
+    public userService: UsersService
+  ) { }
+
+  async ngOnInit() {
+    this.users$ = this.userService.getUserCollectionResource({
+      tenantId: 't56293'
+    });
+  }
+}
+```
+
+## CSRF token
+Currently, it is impossible to fire request by this library if CSRF protection is enabled.
+
