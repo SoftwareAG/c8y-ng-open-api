@@ -136,7 +136,7 @@ export class UsersService extends BaseService {
   }
 
   /** Path part for operation `getUserResource()` */
-  static readonly GetUserResourcePath = '/user/{tenantId}/users/{userId}';
+  static readonly GetUserResourcePath = '/user/{idOfTenant}/users/{userId}';
 
   /**
    * Retrieve a specific user for a specific tenant.
@@ -185,7 +185,7 @@ export class UsersService extends BaseService {
   }
 
   /** Path part for operation `putUserResource()` */
-  static readonly PutUserResourcePath = '/user/{tenantId}/users/{userId}';
+  static readonly PutUserResourcePath = '/user/{idOfTenant}/users/{userId}';
 
   /**
    * Update a specific user for a specific tenant.
@@ -238,7 +238,7 @@ export class UsersService extends BaseService {
   }
 
   /** Path part for operation `deleteUserResource()` */
-  static readonly DeleteUserResourcePath = '/user/{tenantId}/users/{userId}';
+  static readonly DeleteUserResourcePath = '/user/{idOfTenant}/users/{userId}';
 
   /**
    * Delete a specific user for a specific tenant.

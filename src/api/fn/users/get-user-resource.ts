@@ -13,7 +13,7 @@ export interface GetUserResource$Params {
 /**
  * Unique identifier of a Cumulocity IoT tenant.
  */
-  tenantId: string;
+  idOfTenant: string;
 
 /**
  * Unique identifier of the a user.
@@ -24,7 +24,7 @@ export interface GetUserResource$Params {
 export function getUserResource(http: HttpClient, rootUrl: string, params: GetUserResource$Params, context?: HttpContext): Observable<StrictHttpResponse<User>> {
   const rb = new RequestBuilder(rootUrl, getUserResource.PATH, 'get');
   if (params) {
-    rb.path('tenantId', params.tenantId, {});
+    rb.path('idOfTenant', params.idOfTenant, {});
     rb.path('userId', params.userId, {});
   }
 
@@ -38,4 +38,4 @@ export function getUserResource(http: HttpClient, rootUrl: string, params: GetUs
   );
 }
 
-getUserResource.PATH = '/user/{tenantId}/users/{userId}';
+getUserResource.PATH = '/user/{idOfTenant}/users/{userId}';
