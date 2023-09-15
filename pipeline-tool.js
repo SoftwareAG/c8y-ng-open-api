@@ -37,7 +37,7 @@ async function buildAction(url, options) {
     const isSame = _.isEqual(jsonData, originalJson)
     if (isSame && !options.force) {
       console.log('there are no changes in json definition. Exiting...')
-      return;
+      throw new Error(`There are no changes in json definition.`);
     }
     fs.writeFileSync(jsonPath, JSON.stringify(jsonData, null, 2));
 
@@ -50,6 +50,7 @@ async function buildAction(url, options) {
 
   } catch (error) {
     console.error('An error occurred:', error.message);
+    throw new Error('Terminating application');
   }
 }
 
