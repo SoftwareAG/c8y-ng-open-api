@@ -13,7 +13,7 @@ export interface PutUserResource$Params {
 /**
  * Unique identifier of a Cumulocity IoT tenant.
  */
-  idOfTenant: string;
+  tenantId: string;
 
 /**
  * Unique identifier of the a user.
@@ -33,7 +33,7 @@ export interface PutUserResource$Params {
 export function putUserResource(http: HttpClient, rootUrl: string, params: PutUserResource$Params, context?: HttpContext): Observable<StrictHttpResponse<User>> {
   const rb = new RequestBuilder(rootUrl, putUserResource.PATH, 'put');
   if (params) {
-    rb.path('idOfTenant', params.idOfTenant, {});
+    rb.path('tenantId', params.tenantId, {});
     rb.path('userId', params.userId, {});
     rb.header('Accept', params.Accept, {});
     rb.body(params.body, 'application/vnd.com.nsn.cumulocity.user+json');
@@ -49,4 +49,4 @@ export function putUserResource(http: HttpClient, rootUrl: string, params: PutUs
   );
 }
 
-putUserResource.PATH = '/user/{idOfTenant}/users/{userId}';
+putUserResource.PATH = '/user/{tenantId}/users/{userId}';

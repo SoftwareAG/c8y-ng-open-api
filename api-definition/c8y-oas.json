@@ -10121,10 +10121,10 @@
         }
       }
     },
-    "/user/{idOfTenant}/users/{userId}": {
+    "/user/{tenantId}/users/{userId}": {
       "parameters": [
         {
-          "$ref": "#/components/parameters/idOfTenant"
+          "$ref": "#/components/parameters/tenantId"
         },
         {
           "$ref": "#/components/parameters/userId"
@@ -17774,17 +17774,6 @@
       },
       "tenantId": {
         "name": "tenantId",
-        "in": "path",
-        "description": "Unique identifier of a Cumulocity IoT tenant.",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "minLength": 1,
-          "example": "t07007007"
-        }
-      },
-      "idOfTenant": {
-        "name": "idOfTenant",
         "in": "path",
         "description": "Unique identifier of a Cumulocity IoT tenant.",
         "required": true,

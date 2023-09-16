@@ -12,7 +12,7 @@ export interface DeleteUserResource$Params {
 /**
  * Unique identifier of a Cumulocity IoT tenant.
  */
-  idOfTenant: string;
+  tenantId: string;
 
 /**
  * Unique identifier of the a user.
@@ -23,7 +23,7 @@ export interface DeleteUserResource$Params {
 export function deleteUserResource(http: HttpClient, rootUrl: string, params: DeleteUserResource$Params, context?: HttpContext): Observable<StrictHttpResponse<void>> {
   const rb = new RequestBuilder(rootUrl, deleteUserResource.PATH, 'delete');
   if (params) {
-    rb.path('idOfTenant', params.idOfTenant, {});
+    rb.path('tenantId', params.tenantId, {});
     rb.path('userId', params.userId, {});
   }
 
@@ -37,4 +37,4 @@ export function deleteUserResource(http: HttpClient, rootUrl: string, params: De
   );
 }
 
-deleteUserResource.PATH = '/user/{idOfTenant}/users/{userId}';
+deleteUserResource.PATH = '/user/{tenantId}/users/{userId}';
