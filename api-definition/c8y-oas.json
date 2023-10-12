@@ -23702,8 +23702,7 @@
             "type": "string",
             "enum": [
               "PASSWORD",
-              "AUTHORIZATION_CODE",
-              "REFRESH_TOKEN"
+              "AUTHORIZATION_CODE"
             ],
             "example": "PASSWORD"
           },

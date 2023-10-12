@@ -10,7 +10,7 @@ export interface LoginForm {
   /**
    * Dependent on the authentication type. PASSWORD is used for OAI-Secure.
    */
-  grant_type?: 'PASSWORD' | 'AUTHORIZATION_CODE' | 'REFRESH_TOKEN';
+  grant_type?: 'PASSWORD' | 'AUTHORIZATION_CODE';
 
   /**
    * Used in cases of basic or OAI-Secure authentication.
