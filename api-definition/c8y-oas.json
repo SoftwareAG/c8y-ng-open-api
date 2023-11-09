@@ -1397,6 +1397,9 @@
                     "properties": {
                       "status": {
                         "readOnly": true
+                      },
+                      "failureReason": {
+                        "readOnly": true
                       }
                     }
                   }
@@ -1725,7 +1728,8 @@
           "content": {
             "application/vnd.com.nsn.cumulocity.operation+json": {
               "example": {
-                "status": "FAILED"
+                "status": "FAILED",
+                "failureReason": "Description of your failure"
               },
               "schema": {
                 "allOf": [
@@ -22466,8 +22470,7 @@
           },
           "failureReason": {
             "description": "Reason for the failure.",
-            "type": "string",
-            "readOnly": true
+            "type": "string"
           },
           "id": {
             "description": "Unique identifier of this operation.",

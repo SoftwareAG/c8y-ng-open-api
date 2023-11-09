@@ -21,6 +21,7 @@ export interface PostOperationCollectionResource$Params {
   'X-Cumulocity-Processing-Mode'?: 'PERSISTENT' | 'TRANSIENT' | 'QUIESCENT' | 'CEP';
       body: Operation & {
 'status'?: any;
+'failureReason'?: any;
 }
 }
 
