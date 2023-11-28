@@ -63,7 +63,7 @@ export class ChildOperationsService extends BaseService {
    * Retrieve all child additions of a specific managed object by a given ID, or a subset based on queries.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -81,7 +81,7 @@ export class ChildOperationsService extends BaseService {
    * Retrieve all child additions of a specific managed object by a given ID, or a subset based on queries.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
    * </section>
    *
    * This method provides access only to the response body.
@@ -108,7 +108,7 @@ export class ChildOperationsService extends BaseService {
    * *  Create a managed object in the inventory and assign it as a child addition to another managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -130,7 +130,7 @@ export class ChildOperationsService extends BaseService {
    * *  Create a managed object in the inventory and assign it as a child addition to another managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))
    * </section>
    *
    * This method provides access only to the response body.
@@ -153,7 +153,7 @@ export class ChildOperationsService extends BaseService {
    * Remove specific child additions (by given child IDs) from its parent (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -171,7 +171,7 @@ export class ChildOperationsService extends BaseService {
    * Remove specific child additions (by given child IDs) from its parent (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
    * </section>
    *
    * This method provides access only to the response body.
@@ -194,7 +194,7 @@ export class ChildOperationsService extends BaseService {
    * Retrieve a specific child addition (by a given child ID) of a specific managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -214,7 +214,7 @@ export class ChildOperationsService extends BaseService {
    * Retrieve a specific child addition (by a given child ID) of a specific managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)
    * </section>
    *
    * This method provides access only to the response body.
@@ -243,7 +243,7 @@ export class ChildOperationsService extends BaseService {
    * Remove a specific child addition (by a given child ID) from its parent (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -261,7 +261,7 @@ export class ChildOperationsService extends BaseService {
    * Remove a specific child addition (by a given child ID) from its parent (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
    * </section>
    *
    * This method provides access only to the response body.
@@ -284,7 +284,7 @@ export class ChildOperationsService extends BaseService {
    * Retrieve all child assets of a specific managed object by a given ID, or a subset based on queries.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -306,7 +306,7 @@ export class ChildOperationsService extends BaseService {
    * Retrieve all child assets of a specific managed object by a given ID, or a subset based on queries.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
    * </section>
    *
    * This method provides access only to the response body.
@@ -345,7 +345,7 @@ export class ChildOperationsService extends BaseService {
    * *  Create a managed object in the inventory and assign it as a child asset to another managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -367,7 +367,7 @@ export class ChildOperationsService extends BaseService {
    * *  Create a managed object in the inventory and assign it as a child asset to another managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))
    * </section>
    *
    * This method provides access only to the response body.
@@ -390,7 +390,7 @@ export class ChildOperationsService extends BaseService {
    * Remove specific child assets (by given child IDs) from its parent (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -408,7 +408,7 @@ export class ChildOperationsService extends BaseService {
    * Remove specific child assets (by given child IDs) from its parent (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
    * </section>
    *
    * This method provides access only to the response body.
@@ -431,7 +431,7 @@ export class ChildOperationsService extends BaseService {
    * Retrieve a specific child asset (by a given child ID) of a specific managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -451,7 +451,7 @@ export class ChildOperationsService extends BaseService {
    * Retrieve a specific child asset (by a given child ID) of a specific managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)
    * </section>
    *
    * This method provides access only to the response body.
@@ -480,7 +480,7 @@ export class ChildOperationsService extends BaseService {
    * Remove a specific child asset (by a given child ID) from its parent (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -498,7 +498,7 @@ export class ChildOperationsService extends BaseService {
    * Remove a specific child asset (by a given child ID) from its parent (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
    * </section>
    *
    * This method provides access only to the response body.
@@ -521,7 +521,7 @@ export class ChildOperationsService extends BaseService {
    * Retrieve all child devices of a specific managed object by a given ID, or a subset based on queries.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -543,7 +543,7 @@ export class ChildOperationsService extends BaseService {
    * Retrieve all child devices of a specific managed object by a given ID, or a subset based on queries.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
    * </section>
    *
    * This method provides access only to the response body.
@@ -582,7 +582,7 @@ export class ChildOperationsService extends BaseService {
    * *  Create a managed object in the inventory and assign it as a child device to another managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -604,7 +604,7 @@ export class ChildOperationsService extends BaseService {
    * *  Create a managed object in the inventory and assign it as a child device to another managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))
    * </section>
    *
    * This method provides access only to the response body.
@@ -627,7 +627,7 @@ export class ChildOperationsService extends BaseService {
    * Remove specific child devices (by given child IDs) from its parent (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -645,7 +645,7 @@ export class ChildOperationsService extends BaseService {
    * Remove specific child devices (by given child IDs) from its parent (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
    * </section>
    *
    * This method provides access only to the response body.
@@ -668,7 +668,7 @@ export class ChildOperationsService extends BaseService {
    * Retrieve a specific child device (by a given child ID) of a specific managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -688,7 +688,7 @@ export class ChildOperationsService extends BaseService {
    * Retrieve a specific child device (by a given child ID) of a specific managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)
    * </section>
    *
    * This method provides access only to the response body.
@@ -717,7 +717,7 @@ export class ChildOperationsService extends BaseService {
    * Remove a specific child device (by a given child ID) from its parent (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -735,7 +735,7 @@ export class ChildOperationsService extends BaseService {
    * Remove a specific child device (by a given child ID) from its parent (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)
    * </section>
    *
    * This method provides access only to the response body.

@@ -6018,7 +6018,7 @@
           }
         ],
         "summary": "Retrieve URIs to collections of managed objects",
-        "description": "Retrieve URIs and URI templates to collections of managed objects.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ\n</section>\n",
+        "description": "Retrieve URIs and URI templates to collections of managed objects.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -6080,7 +6080,7 @@
           }
         ],
         "summary": "Upload a file",
-        "description": "Uploading a file (binary) requires providing the following properties:\n\n* `object` – In JSON format, it contains information about the file.\n* `file` – Contains the file to be uploaded.\n\nAfter the file has been uploaded, the corresponding managed object will contain the fragment `c8y_IsBinary`.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_INVENTORY_CREATE\n</section>\n",
+        "description": "Uploading a file (binary) requires providing the following properties:\n\n* `object` – In JSON format, it contains information about the file.\n* `file` – Contains the file to be uploaded.\n\nAfter the file has been uploaded, the corresponding managed object will contain the fragment `c8y_IsBinary`.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_INVENTORY_CREATE <b>OR</b> ROLE_BINARY_ADMIN <b>OR</b> ROLE_BINARY_CREATE\n</section>\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -6257,7 +6257,7 @@
           }
         ],
         "summary": "Retrieve a stored file",
-        "description": "Retrieve a stored file (managed object) by a given ID.\nSupports chunk download and resuming an interrupted download using the [`Range` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_READ permission on the resource\n</section>\n",
+        "description": "Retrieve a stored file (managed object) by a given ID.\nSupports chunk download and resuming an interrupted download using the [`Range` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> ROLE_BINARY_READ <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_READ permission on the resource\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -6315,7 +6315,7 @@
           }
         ],
         "summary": "Replace a file",
-        "description": "Upload and replace the attached file (binary) of a specific managed object by a given ID.<br>\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_ADMIN permission on the resource\n</section>\n",
+        "description": "Upload and replace the attached file (binary) of a specific managed object by a given ID.<br>\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_BINARY_ADMIN <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_ADMIN permission on the resource\n</section>\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -6384,7 +6384,7 @@
           }
         ],
         "summary": "Remove a stored file",
-        "description": "Remove a managed object and its stored file by a given ID.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_ADMIN permission on the resource\n</section>\n",
+        "description": "Remove a managed object and its stored file by a given ID.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_BINARY_ADMIN <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_ADMIN permission on the resource\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -6444,7 +6444,7 @@
           }
         ],
         "summary": "Create a managed object",
-        "description": "Create a managed object, for example, a device with temperature measurements support or a binary switch.<br>\nIn general, each managed object may consist of:\n\n*  A unique identifier that references the object.\n*  The name of the object.\n*  The most specific type of the managed object.\n*  A time stamp showing the last update.\n*  Fragments with specific meanings, for example, `c8y_IsDevice`, `c8y_SupportedOperations`.\n*  Any additional custom fragments.\n\nImagine, for example, that you want to describe electric meters from different vendors. Depending on the make of the meter, one may have a relay and one may be capable to measure a single phase or three phases (for example, a three-phase electricity sensor). A fragment `c8y_ThreePhaseElectricitySensor` would identify such an electric meter. Devices' characteristics are identified by storing fragments for each of them.\n\n> **&#9432; Info:** For more details about fragments with specific meanings, review the sections [Device management library](#section/Device-management-library) and [Sensor library](#section/Sensor-library).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_INVENTORY_CREATE\n</section>\n",
+        "description": "Create a managed object, for example, a device with temperature measurements support or a binary switch.<br>\nIn general, each managed object may consist of:\n\n*  A unique identifier that references the object.\n*  The name of the object.\n*  The most specific type of the managed object.\n*  A time stamp showing the last update.\n*  Fragments with specific meanings, for example, `c8y_IsDevice`, `c8y_SupportedOperations`.\n*  Any additional custom fragments.\n\nImagine, for example, that you want to describe electric meters from different vendors. Depending on the make of the meter, one may have a relay and one may be capable to measure a single phase or three phases (for example, a three-phase electricity sensor). A fragment `c8y_ThreePhaseElectricitySensor` would identify such an electric meter. Devices' characteristics are identified by storing fragments for each of them.\n\n> **&#9432; Info:** For more details about fragments with specific meanings, review the sections [Device management library](#section/Device-management-library) and [Sensor library](#section/Sensor-library).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_INVENTORY_CREATE <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_CREATE\n</section>\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -6660,7 +6660,7 @@
           }
         ],
         "summary": "Retrieve a specific managed object",
-        "description": "Retrieve a specific managed object (for example, device, group, template) by a given ID.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source\n</section>\n",
+        "description": "Retrieve a specific managed object (for example, device, group, template) by a given ID.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -6721,7 +6721,7 @@
           }
         ],
         "summary": "Update a specific managed object",
-        "description": "Update a specific managed object (for example, device) by a given ID.\n\nFor example, if you want to specify that your managed object is a device, you must add the fragment `c8y_IsDevice`.\n\n\nThe endpoint can also be used as a device availability heartbeat.\nIf you only specifiy the `id`, it updates the date when the last message was received and no other property.\nThe response then only contains the `id` instead of the full managed object.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source\n</section>\n",
+        "description": "Update a specific managed object (for example, device) by a given ID.\n\nFor example, if you want to specify that your managed object is a device, you must add the fragment `c8y_IsDevice`.\n\n\nThe endpoint can also be used as a device availability heartbeat.\nIf you only specifiy the `id`, it updates the date when the last message was received and no other property.\nThe response then only contains the `id` instead of the full managed object.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source\n</section>\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -6809,7 +6809,7 @@
           }
         ],
         "summary": "Remove a specific managed object",
-        "description": "Remove a specific managed object (for example, device) by a given ID.\n\n> **&#9432; Info:** Inventory DELETE requests are not synchronous. The response could be returned before the delete request has been completed. This may happen especially when the deleted managed object has a lot of associated data. After sending the request, the platform starts deleting the associated data in an asynchronous way. Finally, the requested managed object is deleted after all associated data has been deleted.\n\n> **&#9432; Info:** By default, the delete operation is always propagated to the subgroups, but only if the deleted object is a group.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source\n</section>\n",
+        "description": "Remove a specific managed object (for example, device) by a given ID.\n\n> **&#9432; Info:** Inventory DELETE requests are not synchronous. The response could be returned before the delete request has been completed. This may happen especially when the deleted managed object has a lot of associated data. After sending the request, the platform starts deleting the associated data in an asynchronous way. Finally, the requested managed object is deleted after all associated data has been deleted.\n\n> **&#9432; Info:** By default, the delete operation is always propagated to the subgroups, but only if the deleted object is a group.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -6872,7 +6872,7 @@
           }
         ],
         "summary": "Retrieve the latest availability date of a specific managed object",
-        "description": "Retrieve the date when a specific managed object (by a given ID) sent the last message to Cumulocity IoT.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ\n</section>\n",
+        "description": "Retrieve the date when a specific managed object (by a given ID) sent the last message to Cumulocity IoT.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -6950,7 +6950,7 @@
           }
         ],
         "summary": "Assign a managed object as child addition",
-        "description": "The possible ways to assign child objects are:\n\n*  Assign an existing managed object (by a given child ID) as child addition of another managed object (by a given ID).\n*  Assign multiple existing managed objects (by given child IDs) as child additions of another managed object (by a given ID).\n*  Create a managed object in the inventory and assign it as a child addition to another managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))\n</section>\n",
+        "description": "The possible ways to assign child objects are:\n\n*  Assign an existing managed object (by a given child ID) as child addition of another managed object (by a given ID).\n*  Assign multiple existing managed objects (by given child IDs) as child additions of another managed object (by a given ID).\n*  Create a managed object in the inventory and assign it as a child addition to another managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))\n</section>\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -7051,7 +7051,7 @@
           }
         ],
         "summary": "Retrieve all child additions of a specific managed object",
-        "description": "Retrieve all child additions of a specific managed object by a given ID, or a subset based on queries.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source\n</section>\n",
+        "description": "Retrieve all child additions of a specific managed object by a given ID, or a subset based on queries.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -7119,7 +7119,7 @@
           }
         ],
         "summary": "Remove specific child additions from its parent",
-        "description": "Remove specific child additions (by given child IDs) from its parent (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)\n</section>\n",
+        "description": "Remove specific child additions (by given child IDs) from its parent (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)\n</section>\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -7195,7 +7195,7 @@
           }
         ],
         "summary": "Retrieve a specific child addition of a specific managed object",
-        "description": "Retrieve a specific child addition (by a given child ID) of a specific managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)\n</section>\n",
+        "description": "Retrieve a specific child addition (by a given child ID) of a specific managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -7274,7 +7274,7 @@
           }
         ],
         "summary": "Remove a specific child addition from its parent",
-        "description": "Remove a specific child addition (by a given child ID) from its parent (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)\n</section>\n",
+        "description": "Remove a specific child addition (by a given child ID) from its parent (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -7345,7 +7345,7 @@
           }
         ],
         "summary": "Assign a managed object as child asset",
-        "description": "The possible ways to assign child objects are:\n\n*  Assign an existing managed object (by a given child ID) as child asset of another managed object (by a given ID).\n*  Assign multiple existing managed objects (by given child IDs) as child assets of another managed object (by a given ID).\n*  Create a managed object in the inventory and assign it as a child asset to another managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))\n</section>\n",
+        "description": "The possible ways to assign child objects are:\n\n*  Assign an existing managed object (by a given child ID) as child asset of another managed object (by a given ID).\n*  Assign multiple existing managed objects (by given child IDs) as child assets of another managed object (by a given ID).\n*  Create a managed object in the inventory and assign it as a child asset to another managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))\n</section>\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -7446,7 +7446,7 @@
           }
         ],
         "summary": "Retrieve all child assets of a specific managed object",
-        "description": "Retrieve all child assets of a specific managed object by a given ID, or a subset based on queries.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source\n</section>\n",
+        "description": "Retrieve all child assets of a specific managed object by a given ID, or a subset based on queries.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -7531,7 +7531,7 @@
           }
         ],
         "summary": "Remove specific child assets from its parent",
-        "description": "Remove specific child assets (by given child IDs) from its parent (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)\n</section>\n",
+        "description": "Remove specific child assets (by given child IDs) from its parent (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)\n</section>\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -7607,7 +7607,7 @@
           }
         ],
         "summary": "Retrieve a specific child asset of a specific managed object",
-        "description": "Retrieve a specific child asset (by a given child ID) of a specific managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)\n</section>\n",
+        "description": "Retrieve a specific child asset (by a given child ID) of a specific managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -7686,7 +7686,7 @@
           }
         ],
         "summary": "Remove a specific child asset from its parent",
-        "description": "Remove a specific child asset (by a given child ID) from its parent (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)\n</section>\n",
+        "description": "Remove a specific child asset (by a given child ID) from its parent (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -7757,7 +7757,7 @@
           }
         ],
         "summary": "Assign a managed object as child device",
-        "description": "The possible ways to assign child objects are:\n\n*  Assign an existing managed object (by a given child ID) as child device of another managed object (by a given ID).\n*  Assign multiple existing managed objects (by given child IDs) as child devices of another managed object (by a given ID).\n*  Create a managed object in the inventory and assign it as a child device to another managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))\n</section>\n",
+        "description": "The possible ways to assign child objects are:\n\n*  Assign an existing managed object (by a given child ID) as child device of another managed object (by a given ID).\n*  Assign multiple existing managed objects (by given child IDs) as child devices of another managed object (by a given ID).\n*  Create a managed object in the inventory and assign it as a child device to another managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> ((owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source) <b>AND</b> (owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the child))\n</section>\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -7858,7 +7858,7 @@
           }
         ],
         "summary": "Retrieve all child devices of a specific managed object",
-        "description": "Retrieve all child devices of a specific managed object by a given ID, or a subset based on queries.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source\n</section>\n",
+        "description": "Retrieve all child devices of a specific managed object by a given ID, or a subset based on queries.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -7943,7 +7943,7 @@
           }
         ],
         "summary": "Remove specific child devices from its parent",
-        "description": "Remove specific child devices (by given child IDs) from its parent (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)\n</section>\n",
+        "description": "Remove specific child devices (by given child IDs) from its parent (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)\n</section>\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -8019,7 +8019,7 @@
           }
         ],
         "summary": "Retrieve a specific child device of a specific managed object",
-        "description": "Retrieve a specific child device (by a given child ID) of a specific managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)\n</section>\n",
+        "description": "Retrieve a specific child device (by a given child ID) of a specific managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> MANAGE_OBJECT_READ permission on the source (parent)\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -8098,7 +8098,7 @@
           }
         ],
         "summary": "Remove a specific child device from its parent",
-        "description": "Remove a specific child device (by a given child ID) from its parent (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)\n</section>\n",
+        "description": "Remove a specific child device (by a given child ID) from its parent (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source (parent) <b>OR</b> owner of the child <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source (parent)\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -8161,7 +8161,7 @@
           }
         ],
         "summary": "Retrieve all supported measurement fragments of a specific managed object",
-        "description": "Retrieve all measurement types of a specific managed object by a given ID.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source\n</section>\n",
+        "description": "Retrieve all measurement types of a specific managed object by a given ID.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -8228,7 +8228,7 @@
           }
         ],
         "summary": "Retrieve all supported measurement fragments and series of a specific managed object",
-        "description": "Retrieve all supported measurement fragments and series of a specific managed object by a given ID.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source\n</section>\n",
+        "description": "Retrieve all supported measurement fragments and series of a specific managed object by a given ID.\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -8295,7 +8295,7 @@
           }
         ],
         "summary": "Retrieve the username and state of a specific managed object",
-        "description": "Retrieve the device owner's username and state (enabled or disabled) of a specific managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source\n</section>\n",
+        "description": "Retrieve the device owner's username and state (enabled or disabled) of a specific managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source\n</section>\n",
         "x-code-samples": [
           {
             "lang": "cURL",
@@ -8363,7 +8363,7 @@
           }
         ],
         "summary": "Update the user's details of a specific managed object",
-        "description": "Update the device owner's state (enabled or disabled) of a specific managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source\n</section>\n",
+        "description": "Update the device owner's state (enabled or disabled) of a specific managed object (by a given ID).\n\n<section><h5>Required roles</h5>\nROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source\n</section>\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -15728,7 +15728,7 @@
           }
         ],
         "summary": "Retrieve a usage statistics summary",
-        "description": "Retrieve a usage statistics summary of a tenant.\n<section><h5>Required roles</h5> ROLE_TENANT_STATISTICS_READ <b>OR</b> ROLE_INVENTORY_READ <br/> If the `tenant` request parameter is specified, then the current tenant must be the management tenant <b>OR</b> the parent of the requested `tenant`. </section>",
+        "description": "Retrieve a usage statistics summary of a tenant.\n<section><h5>Required roles</h5> ROLE_TENANT_STATISTICS_READ <b>OR</b> ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ If the `tenant` request parameter is specified, then the current tenant must be the management tenant <b>OR</b> the parent of the requested `tenant`. </section>",
         "x-code-samples": [
           {
             "lang": "cURL",

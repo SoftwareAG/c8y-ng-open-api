@@ -82,7 +82,7 @@ export class BinariesService extends BaseService {
    * After the file has been uploaded, the corresponding managed object will contain the fragment `c8y_IsBinary`.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_INVENTORY_CREATE
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_INVENTORY_CREATE <b>OR</b> ROLE_BINARY_ADMIN <b>OR</b> ROLE_BINARY_CREATE
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -105,7 +105,7 @@ export class BinariesService extends BaseService {
    * After the file has been uploaded, the corresponding managed object will contain the fragment `c8y_IsBinary`.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_INVENTORY_CREATE
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_INVENTORY_CREATE <b>OR</b> ROLE_BINARY_ADMIN <b>OR</b> ROLE_BINARY_CREATE
    * </section>
    *
    * This method provides access only to the response body.
@@ -129,7 +129,7 @@ export class BinariesService extends BaseService {
    * Supports chunk download and resuming an interrupted download using the [`Range` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_READ permission on the resource
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_BINARY_READ <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_READ permission on the resource
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -148,7 +148,7 @@ export class BinariesService extends BaseService {
    * Supports chunk download and resuming an interrupted download using the [`Range` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_READ permission on the resource
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_BINARY_READ <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_READ permission on the resource
    * </section>
    *
    * This method provides access only to the response body.
@@ -171,7 +171,7 @@ export class BinariesService extends BaseService {
    * Upload and replace the attached file (binary) of a specific managed object by a given ID.<br>
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_ADMIN permission on the resource
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_BINARY_ADMIN <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_ADMIN permission on the resource
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -189,7 +189,7 @@ export class BinariesService extends BaseService {
    * Upload and replace the attached file (binary) of a specific managed object by a given ID.<br>
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_ADMIN permission on the resource
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_BINARY_ADMIN <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_ADMIN permission on the resource
    * </section>
    *
    * This method provides access only to the response body.
@@ -212,7 +212,7 @@ export class BinariesService extends BaseService {
    * Remove a managed object and its stored file by a given ID.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_ADMIN permission on the resource
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_BINARY_ADMIN <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_ADMIN permission on the resource
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -230,7 +230,7 @@ export class BinariesService extends BaseService {
    * Remove a managed object and its stored file by a given ID.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_ADMIN permission on the resource
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_BINARY_ADMIN <b>OR</b> owner of the resource <b>OR</b> MANAGE_OBJECT_ADMIN permission on the resource
    * </section>
    *
    * This method provides access only to the response body.

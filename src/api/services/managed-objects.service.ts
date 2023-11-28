@@ -101,7 +101,7 @@ export class ManagedObjectsService extends BaseService {
    * > **&#9432; Info:** For more details about fragments with specific meanings, review the sections [Device management library](#section/Device-management-library) and [Sensor library](#section/Sensor-library).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_INVENTORY_CREATE
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_INVENTORY_CREATE <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_CREATE
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -131,7 +131,7 @@ export class ManagedObjectsService extends BaseService {
    * > **&#9432; Info:** For more details about fragments with specific meanings, review the sections [Device management library](#section/Device-management-library) and [Sensor library](#section/Sensor-library).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_INVENTORY_CREATE
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_INVENTORY_CREATE <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_CREATE
    * </section>
    *
    * This method provides access only to the response body.
@@ -154,7 +154,7 @@ export class ManagedObjectsService extends BaseService {
    * Retrieve a specific managed object (for example, device, group, template) by a given ID.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -172,7 +172,7 @@ export class ManagedObjectsService extends BaseService {
    * Retrieve a specific managed object (for example, device, group, template) by a given ID.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
    * </section>
    *
    * This method provides access only to the response body.
@@ -202,7 +202,7 @@ export class ManagedObjectsService extends BaseService {
    * The response then only contains the `id` instead of the full managed object.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -227,7 +227,7 @@ export class ManagedObjectsService extends BaseService {
    * The response then only contains the `id` instead of the full managed object.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source
    * </section>
    *
    * This method provides access only to the response body.
@@ -254,7 +254,7 @@ export class ManagedObjectsService extends BaseService {
    * > **&#9432; Info:** By default, the delete operation is always propagated to the subgroups, but only if the deleted object is a group.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -276,7 +276,7 @@ export class ManagedObjectsService extends BaseService {
    * > **&#9432; Info:** By default, the delete operation is always propagated to the subgroups, but only if the deleted object is a group.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source
    * </section>
    *
    * This method provides access only to the response body.
@@ -299,7 +299,7 @@ export class ManagedObjectsService extends BaseService {
    * Retrieve the date when a specific managed object (by a given ID) sent the last message to Cumulocity IoT.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -317,7 +317,7 @@ export class ManagedObjectsService extends BaseService {
    * Retrieve the date when a specific managed object (by a given ID) sent the last message to Cumulocity IoT.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ
    * </section>
    *
    * This method provides access only to the response body.
@@ -340,7 +340,7 @@ export class ManagedObjectsService extends BaseService {
    * Retrieve all measurement types of a specific managed object by a given ID.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -358,7 +358,7 @@ export class ManagedObjectsService extends BaseService {
    * Retrieve all measurement types of a specific managed object by a given ID.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
    * </section>
    *
    * This method provides access only to the response body.
@@ -381,7 +381,7 @@ export class ManagedObjectsService extends BaseService {
    * Retrieve all supported measurement fragments and series of a specific managed object by a given ID.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -399,7 +399,7 @@ export class ManagedObjectsService extends BaseService {
    * Retrieve all supported measurement fragments and series of a specific managed object by a given ID.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
    * </section>
    *
    * This method provides access only to the response body.
@@ -422,7 +422,7 @@ export class ManagedObjectsService extends BaseService {
    * Retrieve the device owner's username and state (enabled or disabled) of a specific managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -440,7 +440,7 @@ export class ManagedObjectsService extends BaseService {
    * Retrieve the device owner's username and state (enabled or disabled) of a specific managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_READ permission on the source
    * </section>
    *
    * This method provides access only to the response body.
@@ -463,7 +463,7 @@ export class ManagedObjectsService extends BaseService {
    * Update the device owner's state (enabled or disabled) of a specific managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -481,7 +481,7 @@ export class ManagedObjectsService extends BaseService {
    * Update the device owner's state (enabled or disabled) of a specific managed object (by a given ID).
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source
+   * ROLE_INVENTORY_ADMIN <b>OR</b> ROLE_MANAGED_OBJECT_ADMIN <b>OR</b> owner of the source <b>OR</b> MANAGE_OBJECT_ADMIN permission on the source
    * </section>
    *
    * This method provides access only to the response body.

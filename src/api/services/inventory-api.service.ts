@@ -32,7 +32,7 @@ export class InventoryApiService extends BaseService {
    * Retrieve URIs and URI templates to collections of managed objects.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ
    * </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
@@ -50,7 +50,7 @@ export class InventoryApiService extends BaseService {
    * Retrieve URIs and URI templates to collections of managed objects.
    *
    * <section><h5>Required roles</h5>
-   * ROLE_INVENTORY_READ
+   * ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ
    * </section>
    *
    * This method provides access only to the response body.

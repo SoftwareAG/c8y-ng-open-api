@@ -182,7 +182,7 @@ export class UsageStatisticsService extends BaseService {
    * Retrieve a usage statistics summary.
    *
    * Retrieve a usage statistics summary of a tenant.
-   * <section><h5>Required roles</h5> ROLE_TENANT_STATISTICS_READ <b>OR</b> ROLE_INVENTORY_READ <br/> If the `tenant` request parameter is specified, then the current tenant must be the management tenant <b>OR</b> the parent of the requested `tenant`. </section>
+   * <section><h5>Required roles</h5> ROLE_TENANT_STATISTICS_READ <b>OR</b> ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ If the `tenant` request parameter is specified, then the current tenant must be the management tenant <b>OR</b> the parent of the requested `tenant`. </section>
    *
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
    * To access only the response body, use `getSummaryUsageStatistics()` instead.
@@ -197,7 +197,7 @@ export class UsageStatisticsService extends BaseService {
    * Retrieve a usage statistics summary.
    *
    * Retrieve a usage statistics summary of a tenant.
-   * <section><h5>Required roles</h5> ROLE_TENANT_STATISTICS_READ <b>OR</b> ROLE_INVENTORY_READ <br/> If the `tenant` request parameter is specified, then the current tenant must be the management tenant <b>OR</b> the parent of the requested `tenant`. </section>
+   * <section><h5>Required roles</h5> ROLE_TENANT_STATISTICS_READ <b>OR</b> ROLE_INVENTORY_READ <b>OR</b> ROLE_MANAGED_OBJECT_READ If the `tenant` request parameter is specified, then the current tenant must be the management tenant <b>OR</b> the parent of the requested `tenant`. </section>
    *
    * This method provides access only to the response body.
    * To access the full response (for headers, for example), `getSummaryUsageStatistics$Response()` instead.
